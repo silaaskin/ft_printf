@@ -6,10 +6,10 @@ RM = rm -f
 CFLAGS= -Wall -Werror -Wextra
 CC = cc
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-
-all: $(NAME)
 
 clean:
 	$(RM) $(OBJS)
