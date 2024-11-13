@@ -6,7 +6,7 @@
 /*   By: saskin <saskin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:44:46 by saskin            #+#    #+#             */
-/*   Updated: 2024/11/13 11:38:30 by saskin           ###   ########.fr       */
+/*   Updated: 2024/11/13 14:16:42 by saskin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_format(va_list arg, char c)
+static int	ft_format(va_list arg, char c)
 {
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
@@ -35,7 +35,7 @@ int	ft_format(va_list arg, char c)
 	return (ft_putchar('%'));
 }
 
-bool	flag_catch(int i, const char *str)
+static bool	flag_catch(int i, const char *str)
 {
 	return (str[i] == '%' && (str[i + 1] == 'd' || str[i + 1] == 'i'
 			|| str[i + 1] == 'p' || str[i + 1] == 's' || str[i + 1] == 'c'
