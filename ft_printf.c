@@ -6,11 +6,17 @@
 /*   By: saskin <saskin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:44:46 by saskin            #+#    #+#             */
-/*   Updated: 2024/11/12 19:22:53 by saskin           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:38:30 by saskin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
 
 int	ft_format(va_list arg, char c)
 {
@@ -31,10 +37,10 @@ int	ft_format(va_list arg, char c)
 
 bool	flag_catch(int i, const char *str)
 {
-	return (str[i] == '%' && (str[i + 1] == 'd' || str[i + 1] == 'i' ||
-		str[i + 1] == 'p' || str[i + 1] == 's' || str[i + 1] == 'c' ||
-		str[i + 1] == 'x' || str[i + 1] == 'X' || str[i + 1] == '%' || 
-        str[i + 1] == 'u'));
+	return (str[i] == '%' && (str[i + 1] == 'd' || str[i + 1] == 'i'
+			|| str[i + 1] == 'p' || str[i + 1] == 's' || str[i + 1] == 'c'
+			|| str[i + 1] == 'x' || str[i + 1] == 'X' || str[i + 1] == '%'
+			|| str[i + 1] == 'u'));
 }
 
 int	ft_printf(const char *str, ...)
